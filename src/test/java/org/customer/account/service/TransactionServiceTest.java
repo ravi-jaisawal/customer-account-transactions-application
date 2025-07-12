@@ -47,7 +47,7 @@ public class TransactionServiceTest {
         opType.setOperationTypeId(operationTypeId);
         opType.setDescription("PURCHASE");
 
-        Mockito.when(accountRepo.findById(accountId)).thenReturn(Optional.of(account));
+        Mockito.when(accountRepo.findByIdForUpdate(accountId)).thenReturn(Optional.of(account));
         Mockito.when(opTypeRepo.findById(operationTypeId)).thenReturn(Optional.of(opType));
         Mockito.when(transactionRepo.getAccountBalance(accountId)).thenReturn(100.0);
         Mockito.when(transactionRepo.save(Mockito.any())).thenAnswer(i -> {

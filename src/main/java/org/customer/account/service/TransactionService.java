@@ -1,5 +1,6 @@
 package org.customer.account.service;
 
+import jakarta.transaction.Transactional;
 import org.customer.account.dto.TransactionRequestDTO;
 import org.customer.account.dto.TransactionResponseDTO;
 import org.customer.account.entity.Account;
@@ -26,9 +27,10 @@ public class TransactionService {
     @Autowired
     private TransactionRepository transactionRepo;
 
+    @Transactional
     public TransactionResponseDTO createTransaction(TransactionRequestDTO request) {
         // 1. Validate account
-        Account account = accountRepo.findById(request.getAccountId())
+        Account account = accountRepo.findByIdForUpdate(request.getAccountId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid account ID"));
 
         // 2. Validate operation type
