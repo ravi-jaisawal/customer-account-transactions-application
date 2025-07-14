@@ -4,7 +4,7 @@ This project simulates a basic financial transaction service. A customer can cre
 
 ---
 
-## 🧑‍💻 Tech Stack
+## Tech Stack
 
 - Java 17
 - Spring Boot (if using Java)
@@ -13,9 +13,9 @@ This project simulates a basic financial transaction service. A customer can cre
 
 ---
 
-## 📦 Features (Phase 1)
+## Features (Phase 1)
 
-### ✅ Accounts
+###  Accounts
 
 - `POST /accounts`  
   Create a new account using a unique document number.
@@ -23,14 +23,14 @@ This project simulates a basic financial transaction service. A customer can cre
 - `GET /accounts/{accountId}`  
   Retrieve account details by ID.
 
-### ✅ Transactions
+### Transactions
 
 - `POST /transactions`  
   Register a transaction against an account with an operation type and amount.
 
 ---
 
-## 🧾 Data Structures
+## Data Structures
 
 ### Accounts
 | Field         | Type   |
@@ -57,7 +57,7 @@ This project simulates a basic financial transaction service. A customer can cre
 
 ---
 
-## 📂 API Examples
+## API Examples
 
 ### Create Account
 **Request**
@@ -105,7 +105,7 @@ Response
   "amount": 123.45
 }
 
-🧪 Run Tests
+Run Tests
 If you're using Java with Maven:
 
 ./mvnw clean test
@@ -114,15 +114,15 @@ Once the app is running, access Swagger UI at:
 
 http://localhost:8080/swagger-ui.html
 
-###Build & Run the Application
+## Build & Run the Application
 
-##Step 1: Build the Spring Boot application JAR
+### Step 1: Build the Spring Boot application JAR
 If using Java:
 
 ./mvnw clean package -DskipTests
 Ensure the JAR is generated in the target/ directory.
 
-##Step 2: Start the services
+### Step 2: Start the services
 docker-compose up --build
 
 This will:
@@ -131,12 +131,12 @@ Start a PostgreSQL container on port 5432
 
 Build and run the Spring Boot app on port 8080
 
-##Step 3: Access the application
+### Step 3: Access the application
 API Base URL: http://localhost:8080
 
 Swagger UI: http://localhost:8080/swagger-ui.html
 
-Stop the services
+### Stop the services
 
 docker-compose down
 
