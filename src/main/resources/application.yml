@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: google
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://MISSING}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -11,5 +11,8 @@ spring:
     open-in-view: false
   jackson:
     property-naming-strategy: SNAKE_CASE
+  logging:
+    level:
+      org.springframework.core.env: DEBUG
 server:
   port: 8080
