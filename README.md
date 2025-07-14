@@ -6,7 +6,7 @@ This project simulates a basic financial transaction service. A customer can cre
 
 ## 🧑‍💻 Tech Stack
 
-- Java 17 / Go (Choose your language)
+- Java 17
 - Spring Boot (if using Java)
 - Swagger/OpenAPI for API documentation
 - JUnit (Java) or Go's testing package for unit tests
@@ -109,11 +109,38 @@ Response
 If you're using Java with Maven:
 
 ./mvnw clean test
-If you're using Go:
 
-
-go test ./...
-🔎 API Documentation
 Once the app is running, access Swagger UI at:
 
 http://localhost:8080/swagger-ui.html
+
+###Build & Run the Application
+
+##Step 1: Build the Spring Boot application JAR
+If using Java:
+
+./mvnw clean package -DskipTests
+Ensure the JAR is generated in the target/ directory.
+
+##Step 2: Start the services
+docker-compose up --build
+
+This will:
+
+Start a PostgreSQL container on port 5432
+
+Build and run the Spring Boot app on port 8080
+
+##Step 3: Access the application
+API Base URL: http://localhost:8080
+
+Swagger UI: http://localhost:8080/swagger-ui.html
+
+Stop the services
+
+docker-compose down
+
+Add -v if you want to clear database volumes:
+
+docker-compose down -v
+
